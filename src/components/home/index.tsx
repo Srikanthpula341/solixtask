@@ -9,14 +9,14 @@ import DownloadApp from "./download";
 import Footer from "./footer";
 import PromotionalSection from "./promotion";
 import Header from "@/app/header";
-import Counter from "../Counter";
+
 
 
 
 const HomeComponent: NextPage = () => {
   return (
     <div>
-      <Counter />
+     
       <Header />
       <PromotionalSection />
       <Features />
