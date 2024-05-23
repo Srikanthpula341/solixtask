@@ -1,12 +1,15 @@
+'use client'
 
+import Link from "next/link";
 import { FC } from "react";
 
-type Leader ={
+type Leader = {
+  id: string;
   name: string;
   title: string;
   company: string;
   imageUrl: string;
-}
+};
 
 const leaders: Leader[] = [
   {
@@ -14,28 +17,33 @@ const leaders: Leader[] = [
     title: "CEO",
     company: "Google Software",
     imageUrl: "https://via.placeholder.com/150",
+    id: "1",
   },
   {
     name: "Guy Hawkins",
     title: "CEO",
     company: "Google Software",
     imageUrl: "https://via.placeholder.com/150",
+    id: "2",
   },
   {
     name: "Ralph Edwards",
     title: "CEO",
     company: "Google Software",
-    imageUrl: "https://via.placeholder.com/150", 
+    imageUrl: "https://via.placeholder.com/150",
+    id: "3",
   },
   {
     name: "Eleanor Pena",
     title: "CEO",
     company: "Google Software",
-    imageUrl: "https://via.placeholder.com/150", 
+    imageUrl: "https://via.placeholder.com/150",
+    id: "4",
   },
 ];
 
 const PartneredLeaders: FC = () => {
+
   return (
     <div className="bg-black text-white py-16">
       <div className="container mx-auto text-center">
@@ -61,9 +69,11 @@ const PartneredLeaders: FC = () => {
                   {leader.title}{" "}
                   <span className="font-semibold">{leader.company}</span>
                 </p>
-                <a href="#" className="text-red-500 mt-4 inline-block">
-                  Profile <span className="ml-1">🔗</span>
-                </a>
+                <Link href={`/profile/${leader.id}`} passHref>
+                  <div className="text-red-500 mt-4 inline-block">
+                    Profile <span className="ml-1">🔗</span>
+                  </div>
+                </Link>
               </div>
             </div>
           ))}

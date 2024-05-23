@@ -7,19 +7,25 @@ import HowItWorks from "./work";
 import FAQ from "./faq";
 import DownloadApp from "./download";
 import Footer from "./footer";
+import PromotionalSection from "./promotion";
+import Header from "@/app/header";
+import Counter from "../Counter";
 
 
 
 const HomeComponent: NextPage = () => {
   return (
     <div>
+      <Counter />
+      <Header />
+      <PromotionalSection />
       <Features />
       <HowItWorks />
       <JoinUs />
       <PartneredLeaders />
-      <FAQ/>
-      <DownloadApp/>
-      <Footer/>
+      <FAQ />
+      <DownloadApp />
+      <Footer />
     </div>
   );
 };
